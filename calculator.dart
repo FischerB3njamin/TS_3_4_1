@@ -8,8 +8,12 @@ void calculate(ticketNumber) {
     int seat = calculateSeat(ticketNumber, row);
     double price = calculatePrice(seat);
 
-    // add one to start with row 1 and not by zero
-    row++;
+    if (seat == 0) {
+      seat = 12;
+    } else {
+      // add one to start with row 1 and not by zero
+      row++;
+    }
 
     printResult(row, seat, price, ticketNumber);
   }
